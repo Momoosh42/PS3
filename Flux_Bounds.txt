@@ -1,0 +1,38 @@
+//Explanation of how flux bounds are calculated
+
+//All non-reversible internal reactions (v1,v2,v3,v4) have a bound of 0 to V_max
+//All reversible internal reactions (v5) have a bound of -V_max to V_max
+//All exchange reactions (b_j) have a bound of -10 to 10 (mmol/gDW-hr)
+
+//To find V_max use equation:
+//V_max = k_cat * E with k_cat and E given for all enzymes
+//E = 0.01 umol/gDW = 0.00001 mmol/gDW
+//All k_cat values are in 1/s, multiply by 3600 to convert to 1/hr
+
+V1_max = 203 * E * 3600 = 7.308
+V2_max = 34.5 * E * 3600 = 1.242
+V3_max = 249 * E * 3600 = 8.964
+V4_max = 88.1 * E * 3600 = 3.1716
+V5_max = 13.7 * E * 3600 = .4932
+
+//----------------------------------------------------------------------------//
+
+0.0	7.308
+0.0	1.242
+0.0	8.964
+0.0	3.1716
+-0.4932	0.4932
+-10.0	10.0
+-10.0	10.0
+-10.0	10.0
+-10.0	10.0
+-10.0	10.0
+-10.0	10.0
+-10.0	10.0
+-10.0	10.0
+-10.0	10.0
+-10.0	10.0
+-10.0	10.0
+-10.0	10.0
+-10.0	10.0
+-10.0	10.0

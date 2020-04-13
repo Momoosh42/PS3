@@ -1,0 +1,41 @@
+//The chemical formula of each metabolite placed into an matrix
+
+//Metabolites in alphabetical order
+//m1, AMP, C10H14N5O7P
+//m2, Arginine, C6H14N4O2
+//m3, Arginosuccinate,  C10H18N4O6
+//m4, Aspartate,  C4H7NO4
+//m5, ATP,  C10H16N5O13P3
+//m6, Carbamoyl phosphate,  CH4NO5P
+//m7, Citrulline,   C6H13N3O3
+//m8, Diphosphate,  H4P2O7
+//m9, Fumarate,    C4H4O4
+//m10, H
+//m11, H2O
+//m12, NADP,    C21H29N7O17P3
+//m13, NADPH,   C21H30N7O17P3
+//m14, Nitric oxide,    NO
+//m15, Orinithine,    C5H12N2O2
+//m16, Orthophosphate,   H3PO4
+//m17, Oxygen,      O2
+//m18, Urea,        CH4N2O
+
+//C, H, N, O, P, S
+10.0	14.0	5.0	7.0	1.0	0.0
+6.0	14.0	4.0	2.0	0.0	0.0
+10.0	18.0	4.0	6.0	0.0	0.0
+4.0	7.0	1.0	4.0	0.0	0.0
+10.0	16.0	5.0	13.0	3.0	0.0
+1.0	4.0	1.0	5.0	1.0	0.0
+6.0	13.0	3.0	3.0	0.0	0.0
+0.0	4.0	0.0	7.0	2.0	0.0
+4.0	4.0	0.0	4.0	0.0	0.0
+0.0	1.0	0.0	0.0	0.0	0.0
+0.0	2.0	0.0	1.0	0.0	0.0
+21.0	29.0	7.0	17.0	3.0	0.0
+21.0	30.0	7.0	17.0	3.0	0.0
+0.0	0.0	1.0	1.0	0.0	0.0
+5.0	12.0	2.0	2.0	0.0	0.0
+0.0	3.0	0.0	4.0	1.0	0.0
+0.0	0.0	0.0	2.0	0.0	0.0
+1.0	4.0	2.0	1.0	0.0	0.0
