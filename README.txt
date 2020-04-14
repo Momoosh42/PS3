@@ -7,7 +7,9 @@ EC:6.3.4.5, EC:4.3.2.1, EC:3.5.3.1, EC:2.1.3.3, EC:1.14.13.39
 Flux units are in mmol/gDW-hr
 
 Solution: The reaction fluxes of this system as found to be
-0.09864, 0.09864, 0.0, 0.0, 0.04932, 0.0, 0.09863999999999962, 0.09863999999999962, 0.0, 0.09863999999999962, 0.09863999999999962, 0.09863999999999962, 0.0, 0.197280000000001, 0.1479600000000012, 0.1479600000000012, 0.09863999999999962, 0.1479600000000012, 0.197280000000001
+0.9864, 0.9864, 0.0, 0.0, 0.4932, 0.0, 0.9863999999999997, 0.9863999999999997, 0.0, 0.9863999999999997, 0.9863999999999997, 0.9863999999999997, 0.0, 1.9728000000000012, 1.4796000000000014, 1.4796000000000014, 0.9863999999999997, 1.4796000000000014, 1.9728000000000012
+
+from v_1 to v_5 and then b_1 to b_5
 
 S_Matrix.txt: Contains the reactions of the system, defines the reaction and
 metabolite variables. The initial stochiometric matrix (MxR) is designed. All v
@@ -24,12 +26,17 @@ balanced the first 5 columns (the internal reactions) should all be 0.
 
 Flux_Bounds.txt: Contains the flux bounds of the system in an Rx2 array. The k_cat
 values of the internal reactions are given, as well as the steady state concentration,
-and both are utilized to find V_max (=k_cat*steady_state_concentration). All boundary
-reactions have flux bounds of -10 to 10 mmol/gDW-hr.
+and both are utilized to find V_max (=k_cat*steady_state_concentration). This upper
+bound was further modified using the Michaelis-Menten model which incorporated the
+Michaelis-Menten constant and substrate concentration. The Michaelis-Menten constant
+was found on BRENDA while substrate concentration was derived from Park et al. For
+reactions where this information was not available the standard V_max was used.
+All boundary reactions have flux bounds of -10 to 10 mmol/gDW-hr.
 
-FBA.jl: Contains all the relevant arrays (stochiometric, flux bounds, species bounds and objective indices).
-Initializes Flux.jl and provides a print-out of the solved flux array. The objective function
-solves for maximum urea flux out of the system.
+FBA.jl: Contains all the relevant arrays (stochiometric, flux bounds, species
+bounds and objective indices). Initializes Flux.jl and provides a print-out of
+the solved flux array. The objective function solves for maximum urea flux out
+of the system.
 
 Flux.jl: Contains function calculate_optimal_flux_distribution which linearly
 solves the stochiometric for the flux array using the inputs provided from FBA.jl

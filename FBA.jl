@@ -27,11 +27,11 @@ stoichiometric_matrix=[1.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	-1.0	0.0	0.0	0.0	
 
 
 #Formulation behind default_bounds_array is found in Flux_Bounds.txt
-default_bounds_array = [0.0	7.308
+default_bounds_array = [0.0	5.312
 0.0	1.242
-0.0	8.964
+0.0	1.302
 0.0	3.1716
--0.4932	0.4932
+-0.4932	0.4848
 -10.0	10.0
 -10.0	10.0
 -10.0	10.0

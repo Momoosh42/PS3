@@ -15,13 +15,47 @@ V3_max = 249 * E * 3600 = 8.964
 V4_max = 88.1 * E * 3600 = 3.1716
 V5_max = 13.7 * E * 3600 = .4932
 
+//The upper bound though is calculated as:
+//V_max*(scaled concentration)*boolean*([Substrate]/(K_M + [Substrate]))
+//This is for a Michellis-Menten model
+//scaled concentration and boolean are ignored because this model ignores
+//TX/TL simulations which those describe
+
+//All K_M values come from BRENDA and [Substrate] from Park et al. Nat Chem Biol
+//12:482-9, 2016
+//For multi-substrate reactions the highest K_M of the substrates will be used
+//to simplify
+
+K_M1 = 0.056 mM (Aspartate)
+K_M2 = 0.2 mM   (Argininosuccinate)
+K_M3 = 1.5 mM  (Arginine)
+K_M4 = 0.36 mM (Ornithine)
+K_M5_for = 0.0044 mM (Arginine)
+
+//No K_M values for K_M5_rev could be found so this modification step was ignored
+//for that bound
+
+//Substrate concentration of the substrate from which K_M was derived from. No value
+//was available for Argininosuccinate and Ornithine.
+//The bound modification was ignored for v_2 and v_4.
+
+S_1 = 1490 mM (Aspartate)
+S_3 = .255 mM (Arginine)
+S_5_for = .255 mM (Arginine)
+
+//modified V_max
+V1_max_mod = 7.308 * (0.1490/(0.1490+0.056)) = 5.312
+V3_max_mod = 8.964 * (0.255/(1.5 + 0.255)) = 1.302
+V5_max_for_mod = 0.4932 * (0.255/(0.0044+0.255)) = 0.4848
+
+
 //----------------------------------------------------------------------------//
 
-0.0	7.308
+0.0	5.312
 0.0	1.242
-0.0	8.964
+0.0	1.302
 0.0	3.1716
--0.4932	0.4932
+-0.4932	0.4848
 -10.0	10.0
 -10.0	10.0
 -10.0	10.0
