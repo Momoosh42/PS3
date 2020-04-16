@@ -1,3 +1,7 @@
+//This FBA.jl was updated after the due date due to a bug that would have prevented
+//the code to run on the first go and an improper implementation of the objective
+//function.
+
 This depository contains code to solve for the reaction fluxes of a reconstructed
 urea cycle in humans.
 All reactions are found from KEGG.
@@ -9,7 +13,7 @@ Flux units are in mmol/gDW-hr
 Solution: The reaction fluxes of this system as found to be
 0.9864, 0.9864, 0.0, 0.0, 0.4932, 0.0, 0.9863999999999997, 0.9863999999999997, 0.0, 0.9863999999999997, 0.9863999999999997, 0.9863999999999997, 0.0, 1.9728000000000012, 1.4796000000000014, 1.4796000000000014, 0.9863999999999997, 1.4796000000000014, 1.9728000000000012
 
-from v_1 to v_5 and then b_1 to b_5
+from v_1 to v_5 and then b_1 to b_14
 
 S_Matrix.txt: Contains the reactions of the system, defines the reaction and
 metabolite variables. The initial stochiometric matrix (MxR) is designed. All v

@@ -1,8 +1,7 @@
 #Calculates and prints the flux array that is maximizing urea flux
 
 include("Include.jl")
-(objective_value, calculated_flux_array, dual_value_array, uptake_array, exit_flag, status_flag) = calculate_optimal_flux_distribution(stoichiometric_matrix::Array{Float64,2}, default_bounds_array::Array{Float64,2}, species_bounds_array::Array{Float64,2}, c::Array{Float64,1})
-include("Flux.jl")
+
 #Formulation behind stoichiometric_matrix is found in S_Matrix.txt
 stoichiometric_matrix=[1.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	-1.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0
 0.0	1.0	-1.0	0.0	-2.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0
@@ -70,7 +69,7 @@ species_bounds_array=[0.0	0.0;
 ]
 
 #Objective function indices, Urea outward flux is meant to be maximized
-#so (18,1) is -1.0, all other values are 0.0
+#so (9,1) is -1.0, all other values are 0.0
 c = [0.0;
 0.0;
 0.0;
@@ -79,6 +78,7 @@ c = [0.0;
 0.0;
 0.0;
 0.0;
+-1.0;
 0.0;
 0.0;
 0.0;
@@ -88,6 +88,8 @@ c = [0.0;
 0.0;
 0.0;
 0.0;
--1.0]
+0.0]
+include("Flux.jl")
+(objective_value, calculated_flux_array, dual_value_array, uptake_array, exit_flag, status_flag) = calculate_optimal_flux_distribution(stoichiometric_matrix::Array{Float64,2}, default_bounds_array::Array{Float64,2}, species_bounds_array::Array{Float64,2}, c::Array{Float64,1})
 
 print(calculated_flux_array)
